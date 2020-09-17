@@ -10,7 +10,7 @@ describe('NumeroProcessoService', () => {
         for (let i = 0; i < 50; i++) {
           let np = generateNumeroProcesso()
           let [
-            _,
+            ,
             sequence,
             dv,
             anoAjuizamento,
