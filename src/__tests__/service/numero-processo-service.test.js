@@ -26,9 +26,12 @@ describe('NumeroProcessoService', () => {
             origem
           )
 
-          const mod97 = BigInt(`${sequence}${anoAjuizamento}${orgaoOuSegmentoJustica}${tribunal}${origem}${dv}`) % 97n
+          const mod97 =
+            BigInt(
+              `${sequence}${anoAjuizamento}${orgaoOuSegmentoJustica}${tribunal}${origem}${dv}`
+            ) % 97n
           expect(calculatedChecksum.toString().padStart(2, '0')).toBe(dv)
-          expect(mod97.toString()).toBe("1")
+          expect(mod97.toString()).toBe('1')
         }
       })
     })

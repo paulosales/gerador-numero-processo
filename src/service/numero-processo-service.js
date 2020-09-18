@@ -4,9 +4,9 @@ const pad = (num, padSize) => {
   return num.toString().padStart(padSize, '0')
 }
 
-export const generateNumeroProcesso = () => {
+export const generateNumeroProcesso = (orgao, ano) => {
   const sequence = Math.round(Math.random() * 9999999)
-  const anoAjuizamento = new Date().getFullYear()
+  const anoAjuizamento = ano ? ano : new Date().getFullYear()
 
   /*
   1 – STF
@@ -19,7 +19,9 @@ export const generateNumeroProcesso = () => {
   8 - Justiça dos Estados e do Distrito Federal e Territórios
   9 - Justiça Militar Estadual
   */
-  const orgaoOuSegmentoJustica = Math.round(Math.random() * 8) + 1
+  const orgaoOuSegmentoJustica = orgao
+    ? orgao
+    : Math.round(Math.random() * 8) + 1
 
   let tribunal = 0
   if (orgaoOuSegmentoJustica === 4) {
