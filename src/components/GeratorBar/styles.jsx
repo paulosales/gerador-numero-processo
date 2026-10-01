@@ -20,4 +20,8 @@ export const GeneratorBarContainer = styled.div`
   align-items: center;
   width: 100%;
   max-width: 720px;
+
+  @media (max-width: 622px) {
+    width: 100%;
+  }
 `

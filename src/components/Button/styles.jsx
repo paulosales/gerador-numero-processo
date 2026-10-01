@@ -29,8 +29,9 @@ const ButtonContainer = styled.button`
     transform: translateY(1px);
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 622px) {
     font-size: 1.25rem;
+    width: 100%;
   }
 `
 

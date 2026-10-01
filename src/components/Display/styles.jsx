@@ -51,8 +51,8 @@ export const DisplayContent = styled.div`
     color: var(--primary);
   }
 
-  @media (max-width: 480px) {
-    font-size: 1.15rem;
+  @media (max-width: 622px) {
+    font-size: 1rem;
     padding: 10px 14px;
   }
 `
