@@ -1,18 +1,19 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { NotificationContainer } from 'react-notifications'
-import 'react-notifications/lib/notifications.css'
+import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import store from './redux/store'
 import App from './components/App'
+import { ToastProvider } from './components/Toast'
 import './index.css'
 
-ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <NotificationContainer />
-      <App />
-    </React.StrictMode>
-  </Provider>,
-  document.getElementById('root')
+const root = createRoot(document.getElementById('root'))
+
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <ToastProvider>
+        <App />
+      </ToastProvider>
+    </Provider>
+  </React.StrictMode>
 )

@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons'
 import { MainBar, GeneratorBarContainer } from './styles'
 import Display from '../Display'
 import Button from '../Button'
-import { generateNumeroProcesso } from '../../service/numero-processo-service'
 import OptionsSwitch from '../OptionsSwitch'
-import { useSelector } from 'react-redux'
+import { generateNumeroProcesso } from '../../service/numero-processo-service'
 
 const GeneratorBar = () => {
   const [numeroProcesso, setNumeroProcesso] = useState(generateNumeroProcesso())
@@ -25,10 +27,10 @@ const GeneratorBar = () => {
             setNumeroProcesso(generateNumeroProcesso(orgao, ano))
           }}
         >
-          Gerar
+          <FontAwesomeIcon icon={faArrowsRotate} /> Gerar
         </Button>
       </MainBar>
-      <OptionsSwitch label="Opções"></OptionsSwitch>
+      <OptionsSwitch label="Opções" />
     </GeneratorBarContainer>
   )
 }

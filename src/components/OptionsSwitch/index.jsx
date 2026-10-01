@@ -30,7 +30,7 @@ export default function OptionsSwitch(props) {
         {label}{' '}
         <FontAwesomeIcon icon={options.formVisible ? faCaretUp : faCaretDown} />
       </SwitchButton>
-      <OptionsForm visible={options.formVisible}>
+      <OptionsForm $visible={options.formVisible}>
         <OptionsField>
           <OptionsLabel htmlFor="anoAjuizamento">
             Ano do ajuizamento do processo
